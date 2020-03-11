@@ -98,26 +98,26 @@ class Directory  {
      * Close directory handle.
      * Same as closedir(), only dir_handle defaults to $this.
      * @param resource $dir_handle [optional]
-     * @link http://www.php.net/manual/en/directory.close.php
+     * @link https://secure.php.net/manual/en/directory.close.php
      */
-    public function close ( $dir_handle ) {}
+    public function close ($dir_handle = null) {}
 
     /**
      *  Rewind directory handle.
      * Same as rewinddir(), only dir_handle defaults to $this.
      * @param resource $dir_handle [optional]
-     * @link http://www.php.net/manual/en/directory.rewind.php
+     * @link https://secure.php.net/manual/en/directory.rewind.php
      */
-    public function rewind ( $dir_handle ) {}
+    public function rewind ($dir_handle = null) {}
 
     /**
      * Read entry from directory handle.
      * Same as readdir(), only dir_handle defaults to $this.
      * @param resource $dir_handle [optional]
      * @return string
-     * @link http://www.php.net/manual/en/directory.read.php
+     * @link https://secure.php.net/manual/en/directory.read.php
      */
-    public function read ( $dir_handle) { }
+    public function read ($dir_handle = null) { }
 
 }
 
@@ -129,8 +129,6 @@ class Directory  {
  * </p>
  * @return mixed the value of the constant, or &null; if the constant is not
  * defined.
- * @since 4.0.4
- * @since 5.0
  */
 function constant ($name) {}
 
@@ -141,8 +139,6 @@ function constant ($name) {}
  * A character.
  * </p>
  * @return string the hexadecimal representation of the given string.
- * @since 4.0
- * @since 5.0
  */
 function bin2hex ($str) {}
 
@@ -155,8 +151,6 @@ function bin2hex ($str) {}
  * @return int zero on success, or false on errors. If the call was interrupted
  * by a signal, sleep returns the number of seconds left
  * to sleep.
- * @since 4.0
- * @since 5.0
  */
 function sleep ($seconds) {}
 
@@ -167,9 +161,7 @@ function sleep ($seconds) {}
  * Halt time in micro seconds. A micro second is one millionth of a
  * second.
  * </p>
- * @return void 
- * @since 4.0
- * @since 5.0
+ * @return void
  */
 function usleep ($micro_seconds) {}
 
@@ -191,7 +183,6 @@ function usleep ($micro_seconds) {}
  * the delay
  * nanoseconds - number of nanoseconds
  * remaining in the delay
- * @since 5.0
  */
 function time_nanosleep ($seconds, $nanoseconds) {}
 
@@ -202,7 +193,6 @@ function time_nanosleep ($seconds, $nanoseconds) {}
  * The timestamp when the script should wake.
  * </p>
  * @return bool true on success or false on failure.
- * @since 5.1.0
  */
 function time_sleep_until ($timestamp) {}
 
@@ -220,7 +210,7 @@ function time_sleep_until ($timestamp) {}
  * For more information about the format options, read the
  * strftime page.
  * </p>
- * @return array|bool an array or false on failure.
+ * @return array|false an array or false on failure.
  * </p>
  * <p>
  * <table>
@@ -267,16 +257,13 @@ function time_sleep_until ($timestamp) {}
  * recognized using the specified format</td>
  * </tr>
  * </table>
- * @since 5.1.0
  */
 function strptime ($date, $format) {}
 
 /**
  * Flush the output buffer
  * @link https://php.net/manual/en/function.flush.php
- * @return void 
- * @since 4.0
- * @since 5.0
+ * @return void
  */
 function flush () {}
 
@@ -300,8 +287,6 @@ function flush () {}
  * (See second example).
  * </p>
  * @return string the given string wrapped at the specified column.
- * @since 4.0.2
- * @since 5.0
  */
 function wordwrap ($str, $width = 75, $break = "\n", $cut = false) {}
 
@@ -309,7 +294,7 @@ function wordwrap ($str, $width = 75, $break = "\n", $cut = false) {}
  * Convert special characters to HTML entities
  * @link https://php.net/manual/en/function.htmlspecialchars.php
  * @param string $string <p>
- * The {@link http://www.php.net/manual/en/language.types.string.php string} being converted.
+ * The {@link https://secure.php.net/manual/en/language.types.string.php string} being converted.
  * </p>
  * @param int $flags [optional] <p>
  * A bitmask of one or more of the following flags, which specify how to handle quotes,
@@ -346,7 +331,7 @@ function wordwrap ($str, $width = 75, $break = "\n", $cut = false) {}
  * <td>
  * Silently discard invalid code unit sequences instead of returning
  * an empty string. Using this flag is discouraged as it
- * {@link http://unicode.org/reports/tr36/#Deletion_of_Noncharacters »&nbsp;may have security implications}.
+ * {@link https://unicode.org/reports/tr36/#Deletion_of_Noncharacters »&nbsp;may have security implications}.
  * </td>
  * </tr>
  *
@@ -420,8 +405,6 @@ function wordwrap ($str, $width = 75, $break = "\n", $cut = false) {}
  * encode existing html entities, the default is to convert everything.
  * </p>
  * @return string The converted string.
- * @since 4.0
- * @since 5.0
  */
 function htmlspecialchars ($string, $flags = ENT_COMPAT | ENT_HTML401, $encoding = 'UTF-8', $double_encode = true) {}
 
@@ -468,8 +451,6 @@ function htmlspecialchars ($string, $flags = ENT_COMPAT | ENT_HTML401, $encoding
  * encode existing html entities. The default is to convert everything.
  * </p>
  * @return string the encoded string.
- * @since 4.0
- * @since 5.0
  */
 function htmlentities ($string, $quote_style = null, $charset = null, $double_encode = true) {}
 
@@ -511,8 +492,6 @@ function htmlentities ($string, $quote_style = null, $charset = null, $double_en
  * </p>
  * &reference.strings.charsets;
  * @return string the decoded string.
- * @since 4.3.0
- * @since 5.0
  */
 function html_entity_decode ($string, $quote_style = null, $charset = null) {}
 
@@ -546,7 +525,6 @@ function html_entity_decode ($string, $quote_style = null, $charset = null) {}
  * </table>
  * </p>
  * @return string the decoded string.
- * @since 5.1.0
  */
 function htmlspecialchars_decode ($string, $quote_style = null) {}
 
@@ -724,8 +702,6 @@ function htmlspecialchars_decode ($string, $quote_style = null) {}
  *
  * </p></blockquote>
  * @return array the translation table as an array.
- * @since 4.0
- * @since 5.0
  */
 function get_html_translation_table ($table = null, $quote_style = null, string $encoding = "UTF-8") {}
 
@@ -742,10 +718,8 @@ function get_html_translation_table ($table = null, $quote_style = null, string 
  * hexadecimal number.
  * </p>
  * @return string the sha1 hash as a string.
- * @since 4.3.0
- * @since 5.0
  */
-function sha1 ($str, $raw_output = null) {}
+function sha1 ($str, $raw_output = false) {}
 
 /**
  * Calculate the sha1 hash of a file
@@ -757,11 +731,9 @@ function sha1 ($str, $raw_output = null) {}
  * When true, returns the digest in raw binary format with a length of
  * 20.
  * </p>
- * @return string a string on success, false otherwise.
- * @since 4.3.0
- * @since 5.0
+ * @return string|false a string on success, false otherwise.
  */
-function sha1_file ($filename, $raw_output = null) {}
+function sha1_file ($filename, $raw_output = false) {}
 
 /**
  * Calculate the md5 hash of a string
@@ -775,10 +747,8 @@ function sha1_file ($filename, $raw_output = null) {}
  * length of 16.
  * </p>
  * @return string the hash as a 32-character hexadecimal number.
- * @since 4.0
- * @since 5.0
  */
-function md5 ($str, $raw_output = null) {}
+function md5 ($str, $raw_output = false) {}
 
 /**
  * Calculates the md5 hash of a given file
@@ -790,11 +760,9 @@ function md5 ($str, $raw_output = null) {}
  * When true, returns the digest in raw binary format with a length of
  * 16.
  * </p>
- * @return string a string on success, false otherwise.
- * @since 4.2.0
- * @since 5.0
+ * @return string|false a string on success, false otherwise.
  */
-function md5_file ($filename, $raw_output = null) {}
+function md5_file ($filename, $raw_output = false) {}
 
 /**
  * Calculates the crc32 polynomial of a string
@@ -802,27 +770,25 @@ function md5_file ($filename, $raw_output = null) {}
  * @param string $str <p>
  * The data.
  * </p>
- * @return int the crc32 checksum of str as an integer.
- * @since 4.0.1
- * @since 5.0
+ * @return int the crc32 checksum of str as an integer..1
  */
 function crc32 ($str) {}
 
 /**
  * Parse a binary IPTC block into single tags.
+ * Note: This function does not require the GD image library.
  * @link https://php.net/manual/en/function.iptcparse.php
  * @param string $iptcblock <p>
  * A binary IPTC block.
  * </p>
- * @return array an array using the tagmarker as an index and the value as the
+ * @return array|false an array using the tagmarker as an index and the value as the
  * value. It returns false on error or if no IPTC data was found.
- * @since 4.0
- * @since 5.0
  */
 function iptcparse ($iptcblock) {}
 
 /**
- * Embeds binary IPTC data into a JPEG image
+ * Embeds binary IPTC data into a JPEG image.
+ * Note: This function does not require the GD image library.
  * @link https://php.net/manual/en/function.iptcembed.php
  * @param string $iptcdata <p>
  * The data to be written.
@@ -834,10 +800,8 @@ function iptcparse ($iptcblock) {}
  * Spool flag. If the spool flag is over 2 then the JPEG will be 
  * returned as a string.
  * </p>
- * @return mixed If success and spool flag is lower than 2 then the JPEG will not be 
+ * @return string|bool If success and spool flag is lower than 2 then the JPEG will not be
  * returned as a string, false on errors.
- * @since 4.0
- * @since 5.0
  */
 function iptcembed ($iptcdata, $jpeg_file_name, $spool = null) {}
 
@@ -859,7 +823,7 @@ function iptcembed ($iptcdata, $jpeg_file_name, $spool = null) {}
  * You can use the iptcparse function to parse the
  * binary APP13 marker into something readable.
  * </p>
- * @return array|bool an array with 7 elements.
+ * @return array|false an array with 7 elements.
  * </p>
  * <p>
  * Index 0 and 1 contains respectively the width and the height of the image.
@@ -884,7 +848,6 @@ function iptcembed ($iptcdata, $jpeg_file_name, $spool = null) {}
  * This information can be used to deliver images with correct the HTTP 
  * Content-type header:
  * getimagesize and MIME types
- * ]]>
  * </p>
  * <p>
  * channels will be 3 for RGB pictures and 4 for CMYK
@@ -902,227 +865,11 @@ function iptcembed ($iptcdata, $jpeg_file_name, $spool = null) {}
  * </p>
  * <p>
  * On failure, false is returned.
- * @since 4.0
- * @since 5.0
  */
 function getimagesize ($filename, array &$imageinfo = null) {}
 
 /**
- * Return an image containing the affine tramsformed src image, using an optional clipping area
- * @link http://www.php.net/manual/en/function.imageaffine.php
- * @param resource $image <p>An image resource, returned by one of the image creation functions,
- * such as {@link http://www.php.net/manual/en/function.imagecreatetruecolor.php imagecreatetruecolor()}.</p>
- * @param array $affine <p>Array with keys 0 to 5.</p>
- * @param array $clip [optional] <p>Array with keys "x", "y", "width" and "height".</p>
- * @return resource|bool Return affined image resource on success or FALSE on failure.
- */
-function imageaffine($image, $affine, $clip = null) {}
-
-/**
- * Concat two matrices (as in doing many ops in one go)
- * @link http://www.php.net/manual/en/function.imageaffinematrixconcat.php
- * @param array $m1 <p>Array with keys 0 to 5.</p>
- * @param array $m2 <p>Array with keys 0 to 5.</p>
- * @return array|bool Array with keys 0 to 5 and float values or <b>FALSE</b> on failure.
- * @since 5.5.0
- */
-function imageaffinematrixconcat(array $m1, array $m2) {}
-
-/**
- * Return an image containing the affine tramsformed src image, using an optional clipping area
- * @link http://www.php.net/manual/en/function.imageaffinematrixget.php
- * @param int $type <p> One of <b>IMG_AFFINE_*</b> constants.
- * @param mixed $options [optional]
- * @return array|bool Array with keys 0 to 5 and float values or <b>FALSE</b> on failure.
- * @since 5.5.0
- */
-
-function imageaffinematrixget ($type, $options = null) {}
-
-/**
- * Crop an image using the given coordinates and size, x, y, width and height
- * @link http://www.php.net/manual/en/function.imagecrop.php
- * @param resource $image <p>
- * An image resource, returned by one of the image creation functions, such as {@link http://www.php.net/manual/en/function.imagecreatetruecolor.php imagecreatetruecolor()}.
- * </p>
- * @param array $rect <p>Array with keys "x", "y", "width" and "height".</p>
- * @return resource|bool Return cropped image resource on success or FALSE on failure.
- * @since 5.5.0
- */
-function imagecrop ($image, $rect) {}
-
-/**
- * Crop an image automatically using one of the available modes
- * @link http://www.php.net/manual/en/function.imagecropauto.php
- * @param resource $image <p>
- * An image resource, returned by one of the image creation functions, such as {@link http://www.php.net/manual/en/function.imagecreatetruecolor.php imagecreatetruecolor()}.
- * </p>
- * @param int $mode [optional] <p>
- * One of <b>IMG_CROP_*</b> constants.
- * </p>
- * @param float $threshold [optional] <p>
- * Used <b>IMG_CROP_THRESHOLD</b> mode.
- * </p>
- * @param int $color [optional]
- * <p>
- * Used in <b>IMG_CROP_THRESHOLD</b> mode.
- * </p>
- * @return resource|bool Return cropped image resource on success or <b>FALSE</b> on failure.
- * @since 5.5.0
- */
-function imagecropauto ($image, $mode = -1, $threshold = .5, $color = -1) {}
-
-/**
- * Flips an image using a given mode
- * @link http://www.php.net/manual/en/function.imageflip.php
- * @param resource $image <p>
- * An image resource, returned by one of the image creation functions, such as {@link http://www.php.net/manual/en/function.imagecreatetruecolor.php imagecreatetruecolor()}.
- * </p>
- * @param int $mode <p>
- * Flip mode, this can be one of the <b>IMG_FLIP_*</b> constants:
- * </p>
- * <table>
- * <thead>
- * <tr>
- * <th>Constant</th>
- * <th>Meaning</th>
- * </tr>
- * </thead>
- * <tr>
- * <td><b>IMG_FLIP_HORIZONTAL</b></td>
- * <td>
- * Flips the image horizontally.
- * </td>
- * </tr>
- * <tr>
- * <td><b>IMG_FLIP_VERTICAL</b></td>
- * <td>
- * Flips the image vertically.
- * </td>
- * </tr>
- * <tr>
- * <td><b>IMG_FLIP_BOTH</b></td>
- * <td>
- * Flips the image both horizontally and vertically.
- * </td>
- * </tr>
- * </tbody>
- * </table>
- * @return bool Returns <b>TRUE</b> on success or <b>FALSE</b> on failure.
- * @since 5.5.0
- */
-function imageflip ($image, $mode) {}
-
-/**
- * Converts a palette based image to true color
- * @link http://www.php.net/manual/en/function.imagepalettetotruecolor.php
- * @param resource $image <p>
- * An image resource, returnd by one of the image creation functions, such as {@link http://www.php.net/manual/en/function.imagecreatetruecolor.php imagecreatetruecolor()}.
- * </p>
- * @return bool Returns <b>TRUE</b> if the convertion was complete, or if the source image already is a true color image, otherwise <b>FALSE</b> is returned.
- * @since 5.5.0
- */
-function imagepalettetotruecolor ($image) {}
-
-/**
- * @since 5.5.0
- * Scale an image using the given new width and height
- * @link http://www.php.net/manual/en/function.imagescale.php
- * @param resource $image <p>
- * An image resource, returnd by one of the image creation functions, such as {@link http://www.php.net/manual/en/function.imagecreatetruecolor.php imagecreatetruecolor()}.
- * </p>
- * @param int $new_width
- * @param int $new_height [optional]
- * @param int $mode [optional] One of <b>IMG_NEAREST_NEIGHBOUR</b>, <b>IMG_BILINEAR_FIXED</b>, <b>IMG_BICUBIC</b>, <b>IMG_BICUBIC_FIXED</b> or anything else (will use two pass).
- * @return resource|bool Return scaled image resource on success or <b>FALSE</b> on failure.
- */
-
-function imagescale ($image, $new_width, $new_height = -1, $mode = IMG_BILINEAR_FIXED) {}
-
-/**
- * Set the interpolation method
- * @link http://www.php.net/manual/en/function.imagesetinterpolation.php
- * @param resource $image <p>
- * An image resource, returned by one of the image creation functions, such as {@link http://www.php.net/manual/en/function.imagecreatetruecolor.php imagecreatetruecolor()}.
- * </p>
- * @param int $method <p>
- * The interpolation method, which can be one of the following:
- * <ul>
- * <li>
- * IMG_BELL: Bell filter.
- * </li>
- * <li>
- * IMG_BESSEL: Bessel filter.
- * </li>
- * <li>
- * IMG_BICUBIC: Bicubic interpolation.
- * </li>
- * <li>
- * IMG_BICUBIC_FIXED: Fixed point implementation of the bicubic interpolation.
- * </li>
- * <li>
- * IMG_BILINEAR_FIXED: Fixed point implementation of the  bilinear interpolation (<em>default (also on image creation)</em>).
- * </li>
- * <li>
- * IMG_BLACKMAN: Blackman window function.
- * </li>
- * <li>
- * IMG_BOX: Box blur filter.
- * </li>
- * <li>
- * IMG_BSPLINE: Spline interpolation.
- * </li>
- * <li>
- * IMG_CATMULLROM: Cubbic Hermite spline interpolation.
- * </li>
- * <li>
- * IMG_GAUSSIAN: Gaussian function.
- * </li>
- * <li>
- * IMG_GENERALIZED_CUBIC: Generalized cubic spline fractal interpolation.
- * </li>
- * <li>
- * IMG_HERMITE: Hermite interpolation.
- * </li>
- * <li>
- * IMG_HAMMING: Hamming filter.
- * </li>
- * <li>
- * IMG_HANNING: Hanning filter.
- * </li>
- * <li>
- * IMG_MITCHELL: Mitchell filter.
- * </li>
- * <li>
- * IMG_POWER: Power interpolation.
- * </li>
- * <li>
- * IMG_QUADRATIC: Inverse quadratic interpolation.
- * </li>
- * <li>
- * IMG_SINC: Sinc function.
- * </li>
- * <li>
- * IMG_NEAREST_NEIGHBOUR: Nearest neighbour interpolation.
- * </li>
- * <li>
- * IMG_WEIGHTED4: Weighting filter.
- * </li>
- * <li>
- * IMG_TRIANGLE: Triangle interpolation.
- * </li>
- * </ul>
- * </p>
- * @return bool Returns TRUE on success or FALSE on failure.
- * @since 5.5.0
- */
-function imagesetinterpolation ($image, $method = IMG_BILINEAR_FIXED) {}
-
-/**
- * Get Mime-Type for image-type returned by getimagesize,
- * @since 4.3.0
- * @since 5.0
-   exif_read_data, exif_thumbnail, exif_imagetype
+ * Get Mime-Type for image-type returned by getimagesize, exif_read_data, exif_thumbnail, exif_imagetype
  * @link https://php.net/manual/en/function.image-type-to-mime-type.php
  * @param int $imagetype <p>
  * One of the IMAGETYPE_XXX constants.
@@ -1218,7 +965,6 @@ function image_type_to_mime_type ($imagetype) {}
  * Whether to prepend a dot to the extension or not. Default to true.
  * </p>
  * @return string A string with the extension corresponding to the given image type.
- * @since 5.0
  */
 function image_type_to_extension ($imagetype, $include_dot = null) {}
 
@@ -1305,8 +1051,6 @@ function image_type_to_extension ($imagetype, $include_dot = null) {}
  * </table>
  * </p>
  * @return bool true on success or false on failure.
- * @since 4.0
- * @since 5.0
  */
 function phpinfo ($what = null) {}
 
@@ -1320,8 +1064,6 @@ function phpinfo ($what = null) {}
  * specified, phpversion returns the version of that
  * extension, or false if there is no version information associated or
  * the extension isn't enabled.
- * @since 4.0
- * @since 5.0
  */
 function phpversion ($extension = null) {}
 
@@ -1387,42 +1129,32 @@ function phpversion ($extension = null) {}
  * </table>
  * </p>
  * @return bool true on success or false on failure.
- * @since 4.0
- * @since 5.0
  */
 function phpcredits ($flag = null) {}
 
 /**
- * @deprecated 5.5 Removed in PHP 5.5
+ * @removed 5.5
  * Gets the logo guid
  * @link https://php.net/manual/en/function.php-logo-guid.php
  * @return string PHPE9568F34-D428-11d2-A769-00AA001ACF42.
- * @since 4.0
- * @since 5.0
  */
 function php_logo_guid () {}
 
 /**
- * @deprecated 5.5 Removed in PHP 5.5
- * @since 4.0
- * @since 5.0
+ * @removed 5.5
  */
 function php_real_logo_guid () {}
 
 /**
- * @deprecated 5.5 Removed in PHP 5.5
- * @since 4.0
- * @since 5.0
+ * @removed 5.5
  */
 function php_egg_logo_guid () {}
 
 /**
- * @deprecated 5.5 Removed in PHP 5.5
+ * @removed 5.5
  * Gets the Zend guid
  * @link https://php.net/manual/en/function.zend-logo-guid.php
  * @return string PHPE9568F35-D428-11d2-A769-00AA001ACF42.
- * @since 4.0
- * @since 5.0
  */
 function zend_logo_guid () {}
 
@@ -1442,8 +1174,6 @@ function zend_logo_guid () {}
  * milter, nsapi, 
  * phttpd, pi3web, roxen,
  * thttpd, tux, and webjames.
- * @since 4.0.1
- * @since 5.0
  */
 function php_sapi_name () {}
 
@@ -1456,8 +1186,6 @@ function php_sapi_name () {}
  * 'a': This is the default. Contains all modes in
  * the sequence "s n r v m".
  * @return string the description, as a string.
- * @since 4.0.2
- * @since 5.0
  */
 function php_uname ($mode = null) {}
 
@@ -1471,15 +1199,13 @@ function php_uname ($mode = null) {}
  * still make it into the returned string but a PHP error will also result.
  * This PHP error will be seen both at compile time and while using
  * php_ini_scanned_files.
- * @since 4.3.0
- * @since 5.0
  */
 function php_ini_scanned_files () {}
 
 /**
  * Retrieve a path to the loaded php.ini file
  * @link https://php.net/manual/en/function.php-ini-loaded-file.php
- * @return string The loaded &php.ini; path, or false if one is not loaded.
+ * @return string|false The loaded &php.ini; path, or false if one is not loaded.
  * @since 5.2.4
  */
 function php_ini_loaded_file () {}
@@ -1497,8 +1223,6 @@ function php_ini_loaded_file () {}
  * str1 is less than str2; &gt;
  * 0 if str1 is greater than
  * str2, and 0 if they are equal.
- * @since 4.0
- * @since 5.0
  */
 function strnatcmp ($str1, $str2) {}
 
@@ -1515,8 +1239,6 @@ function strnatcmp ($str1, $str2) {}
  * str1 is less than str2 &gt;
  * 0 if str1 is greater than
  * str2, and 0 if they are equal.
- * @since 4.0
- * @since 5.0
  */
 function strnatcasecmp ($str1, $str2) {}
 
@@ -1538,16 +1260,12 @@ function strnatcasecmp ($str1, $str2) {}
  * greater than the haystack length.
  * </p>
  * @return int This functions returns an integer.
- * @since 4.0
- * @since 5.0
  */
 function substr_count ($haystack, $needle, $offset = null, $length = null) {}
 
 /**
  * Finds the length of the first segment of a string consisting
- * @since 4.0
- * @since 5.0
-   entirely of characters contained within a given mask.
+ * entirely of characters contained within a given mask.
  * @link https://php.net/manual/en/function.strspn.php
  * @param string $subject <p>
  * The string to examine.
@@ -1613,8 +1331,6 @@ function strspn ($subject, $mask, $start = null, $length = null) {}
  * The length of the string to examine.
  * </p>
  * @return int the length of the segment as an integer.
- * @since 4.0
- * @since 5.0
  */
 function strcspn ($str1, $str2, $start = null, $length = null) {}
 
@@ -1633,7 +1349,5 @@ function strcspn ($str1, $str2, $start = null, $length = null) {}
  * The delimiter used when splitting up str.
  * </p>
  * @return string A string token.
- * @since 4.0
- * @since 5.0
  */
 function strtok ($str = null, $token) {}

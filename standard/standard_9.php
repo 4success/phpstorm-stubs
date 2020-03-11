@@ -1,22 +1,24 @@
 <?php
 
-
+/**
+ * @since 5.6
+ */
 define ("ARRAY_FILTER_USE_BOTH", 1);
+
+/**
+ * @since 5.6
+ */
 define ("ARRAY_FILTER_USE_KEY", 2);
 
 
 /**
  * Merge two or more arrays recursively
  * @link https://php.net/manual/en/function.array-merge-recursive.php
- * @param array $array1 <p>
- * Initial array to merge.
- * </p>
- * @param array $_ [optional]
+ * @param array $_ [optional] Variable list of arrays to recursively merge.
  * @return array An array of values resulted from merging the arguments together.
- * @since 4.0.1
- * @since 5.0
  */
-function array_merge_recursive(array $array1, array $_ = null) { }
+function array_merge_recursive(array $_ = null) { }
+
 
 /**
  * array_replace() replaces the values of the first array with the same values from all the following arrays.
@@ -35,7 +37,6 @@ function array_merge_recursive(array $array1, array $_ = null) { }
  * @param array $array2 [optional]
  * @param array $_ [optional]
  * @return array or null if an error occurs.
- * @since 5.3.0
  */
 function array_replace(array $array, array $array1, array $array2 = null, array $_ = null) { }
 
@@ -51,7 +52,6 @@ function array_replace(array $array, array $array1, array $array2 = null, array 
  * @param array $array2 [optional]
  * @param array $_ [optional]
  * @return array an array, or &null; if an error occurs.
- * @since 5.3.0
  */
 function array_replace_recursive(array $array, array $array1, array $array2 = null, array $_ = null) { }
 
@@ -68,8 +68,6 @@ function array_replace_recursive(array $array, array $array1, array $array2 = nu
  * Determines if strict comparison (===) should be used during the search.
  * </p>
  * @return array an array of all the keys in input.
- * @since 4.0
- * @since 5.0
  */
 function array_keys(array $input, $search_value = null, $strict = null) { }
 
@@ -80,8 +78,7 @@ function array_keys(array $input, $search_value = null, $strict = null) { }
  * The array.
  * </p>
  * @return array an indexed array of values.
- * @since 4.0
- * @since 5.0
+ * @meta
  */
 function array_values(array $input) { }
 
@@ -93,20 +90,18 @@ function array_values(array $input) { }
  * </p>
  * @return array an associative array of values from input as
  * keys and their count as value.
- * @since 4.0
- * @since 5.0
  */
 function array_count_values(array $input) { }
 
 /**
  * (PHP 5 &gt;=5.5.0)<br/>
  * Return the values from a single column in the input array
- * @link http://www.php.net/manual/en/function.array-column.php
+ * @link https://secure.php.net/manual/en/function.array-column.php
  * @param array $array <p>A multi-dimensional array (record set) from which to pull a column of values.</p>
  * @param mixed $column <p>The column of values to return. This value may be the integer key of the column you wish to retrieve, or it may be the string key name for an associative array. It may also be NULL to return complete arrays (useful together with index_key to reindex the array).</p>
  * @param mixed $index_key [optional] <p>The column to use as the index/keys for the returned array. This value may be the integer key of the column, or it may be the string key name.</p>
  * @return array Returns an array of values representing a single column from the input array.
- * @since 5.5.0
+ * @since 5.5
  */
 function array_column(array $array, $column, $index_key = null) { }
 
@@ -120,8 +115,7 @@ function array_column(array $array, $column, $index_key = null) { }
  * If set to true keys are preserved.
  * </p>
  * @return array the reversed array.
- * @since 4.0
- * @since 5.0
+ * @meta
  */
 function array_reverse(array $array, $preserve_keys = null) { }
 
@@ -143,9 +137,8 @@ function array_reverse(array $array, $preserve_keys = null) { }
  * </p>
  * <p>
  * If the array is empty and initial is not passed,
- * array_reduce returns &null;.
- * @since 4.0.5
- * @since 5.0
+ * array_reduce returns null.
+ * @meta
  */
 function array_reduce(array $input, $function, $initial = null) { }
 
@@ -168,8 +161,6 @@ function array_reduce(array $input, $function, $initial = null) { }
  * positive then the array is padded on the right, if it's negative then
  * on the left. If the absolute value of pad_size is less than or equal to
  * the length of the input then no padding takes place.
- * @since 4.0
- * @since 5.0
  */
 function array_pad(array $input, $pad_size, $pad_value) { }
 
@@ -179,9 +170,7 @@ function array_pad(array $input, $pad_size, $pad_value) { }
  * @param array $array <p>
  * An array of key/value pairs to be flipped.
  * </p>
- * @return array|null Returns the flipped array on success and NULL on failure.
- * @since 4.0
- * @since 5.0
+ * @return array Returns the flipped array.
  */
 function array_flip(array $array) { }
 
@@ -195,10 +184,8 @@ function array_flip(array $array) { }
  * Either CASE_UPPER or
  * CASE_LOWER (default)
  * </p>
- * @return array an array with its keys lower or uppercased, or false if
- * input is not an array.
- * @since 4.2.0
- * @since 5.0
+ * @return array an array with its keys lower or uppercased
+ * @meta
  */
 function array_change_key_case(array $input, $case = null) { }
 
@@ -215,8 +202,7 @@ function array_change_key_case(array $input, $case = null) { }
  * returns the key for a random entry. Otherwise, it returns an array
  * of keys for the random entries. This is done so that you can pick
  * random keys as well as values out of the array.
- * @since 4.0
- * @since 5.0
+ * @meta
  */
 function array_rand(array $input, $num_req = null) { }
 
@@ -249,8 +235,7 @@ function array_rand(array $input, $num_req = null) { }
  * </li>
  * </ul>
  * @return array the filtered array.
- * @since 4.0.1
- * @since 5.0
+ * @meta
  */
 function array_unique(array $array, $sort_flags = SORT_STRING) { }
 
@@ -266,8 +251,7 @@ function array_unique(array $array, $sort_flags = SORT_STRING) { }
  * @param array $_ [optional]
  * @return array an array containing all of the values in
  * array1 whose values exist in all of the parameters.
- * @since 4.0.1
- * @since 5.0
+ * @meta
  */
 function array_intersect(array $array1, array $array2, array $_ = null) { }
 
@@ -284,7 +268,7 @@ function array_intersect(array $array1, array $array2, array $_ = null) { }
  * @return array an associative array containing all the entries of
  * array1 which have keys that are present in all
  * arguments.
- * @since 5.1.0
+ * @meta
  */
 function array_intersect_key(array $array1, array $array2, array $_ = null) { }
 
@@ -303,7 +287,7 @@ function array_intersect_key(array $array1, array $array2, array $_ = null) { }
  * </p>
  * @return array the values of array1 whose keys exist
  * in all the arguments.
- * @since 5.1.0
+ * @meta
  */
 function array_intersect_ukey(array $array1, array $array2, array $_ = null, $key_compare_func) { }
 
@@ -328,7 +312,7 @@ function array_intersect_ukey(array $array1, array $array2, array $_ = null, $ke
  * </p>
  * @return array an array containing all the values of array1
  * that are present in all the arguments.
- * @since 5.0
+ * @meta
  */
 function array_uintersect(array $array1, array $array2, array $_ = null, $data_compare_func) { }
 
@@ -344,8 +328,7 @@ function array_uintersect(array $array1, array $array2, array $_ = null, $data_c
  * @param array $_ [optional]
  * @return array an associative array containing all the values in
  * array1 that are present in all of the arguments.
- * @since 4.3.0
- * @since 5.0
+ * @meta
  */
 function array_intersect_assoc(array $array1, array $array2, array $_ = null) { }
 
@@ -368,7 +351,7 @@ function array_intersect_assoc(array $array1, array $array2, array $_ = null) { 
  * </p>
  * @return array an array containing all the values of
  * array1 that are present in all the arguments.
- * @since 5.0
+ * @meta
  */
 function array_uintersect_assoc(array $array1, array $array2, array $_ = null, $data_compare_func) { }
 
@@ -387,7 +370,7 @@ function array_uintersect_assoc(array $array1, array $array2, array $_ = null, $
  * </p>
  * @return array the values of array1 whose values exist
  * in all of the arguments.
- * @since 5.0
+ * @meta
  */
 function array_intersect_uassoc(array $array1, array $array2, array $_ = null, $key_compare_func) { }
 
@@ -413,7 +396,7 @@ function array_intersect_uassoc(array $array1, array $array2, array $_ = null, $
  * </p>
  * @return array an array containing all the values of
  * array1 that are present in all the arguments.
- * @since 5.0
+ * @meta
  */
 function array_uintersect_uassoc(array $array1, array $array2, array $_ = null, $data_compare_func, $key_compare_func) { }
 
@@ -429,8 +412,7 @@ function array_uintersect_uassoc(array $array1, array $array2, array $_ = null, 
  * @param array $_ [optional]
  * @return array an array containing all the entries from
  * array1 that are not present in any of the other arrays.
- * @since 4.0.1
- * @since 5.0
+ * @meta
  */
 function array_diff(array $array1, array $array2, array $_ = null) { }
 
@@ -447,7 +429,7 @@ function array_diff(array $array1, array $array2, array $_ = null) { }
  * @return array an array containing all the entries from
  * array1 whose keys are not present in any of the
  * other arrays.
- * @since 5.1.0
+ * @meta
  */
 function array_diff_key(array $array1, array $array2, array $_ = null) { }
 
@@ -469,7 +451,7 @@ function array_diff_key(array $array1, array $array2, array $_ = null) { }
  * </p>
  * @return array an array containing all the entries from
  * array1 that are not present in any of the other arrays.
- * @since 5.1.0
+ * @meta
  */
 function array_diff_ukey(array $array1, array $array2, array $_ = null, $key_compare_func) { }
 
@@ -494,7 +476,7 @@ function array_diff_ukey(array $array1, array $array2, array $_ = null, $key_com
  * </p>
  * @return array an array containing all the values of array1
  * that are not present in any of the other arguments.
- * @since 5.0
+ * @meta
  */
 function array_udiff(array $array1, array $array2, array $_ = null, $data_compare_func) { }
 
@@ -510,8 +492,7 @@ function array_udiff(array $array1, array $array2, array $_ = null, $data_compar
  * @param array $_ [optional]
  * @return array an array containing all the values from
  * array1 that are not present in any of the other arrays.
- * @since 4.3.0
- * @since 5.0
+ * @meta
  */
 function array_diff_assoc(array $array1, array $array2, array $_ = null) { }
 
@@ -543,7 +524,7 @@ function array_diff_assoc(array $array1, array $array2, array $_ = null) { }
  * callback. In this aspect the behaviour is opposite to the behaviour of
  * array_diff_assoc which uses internal function for
  * comparison.
- * @since 5.0
+ * @meta
  */
 function array_udiff_assoc(array $array1, array $array2, array $_ = null, $data_compare_func) { }
 
@@ -565,7 +546,7 @@ function array_udiff_assoc(array $array1, array $array2, array $_ = null, $data_
  * </p>
  * @return array an array containing all the entries from
  * array1 that are not present in any of the other arrays.
- * @since 5.0
+ * @meta
  */
 function array_diff_uassoc(array $array1, array $array2, array $_ = null, $key_compare_func) { }
 
@@ -604,7 +585,7 @@ function array_diff_uassoc(array $array1, array $array2, array $_ = null, $key_c
  * @return array an array containing all the values from
  * array1 that are not present in any of the other
  * arguments.
- * @since 5.0
+ * @meta
  */
 function array_udiff_uassoc(array $array1, array $array2, array $_ = null, $data_compare_func, $key_compare_func) { }
 
@@ -615,8 +596,6 @@ function array_udiff_uassoc(array $array1, array $array2, array $_ = null, $data
  * The input array.
  * </p>
  * @return int|float the sum of values as an integer or float.
- * @since 4.0.4
- * @since 5.0
  */
 function array_sum(array $array) { }
 
@@ -627,7 +606,6 @@ function array_sum(array $array) { }
  * The array.
  * </p>
  * @return int|float the product as an integer or float.
- * @since 5.1.0
  */
 function array_product(array $array) { }
 
@@ -663,8 +641,7 @@ function array_product(array $array) { }
  * </li>
  * </ul>
  * @return array the filtered array.
- * @since 4.0.6
- * @since 5.0
+ * @meta
  */
 function array_filter(array $input, $callback = null, $flag = 0) { }
 
@@ -680,8 +657,7 @@ function array_filter(array $input, $callback = null, $flag = 0) { }
  * @param array $_ [optional]
  * @return array an array containing all the elements of arr1
  * after applying the callback function to each one.
- * @since 4.0.6
- * @since 5.0
+ * @meta
  */
 function array_map($callback, array $arr1, array $_ = null) { }
 
@@ -700,8 +676,6 @@ function array_map($callback, array $arr1, array $_ = null) { }
  * </p>
  * @return array a multidimensional numerically indexed array, starting with zero,
  * with each dimension containing size elements.
- * @since 4.2.0
- * @since 5.0
  */
 function array_chunk(array $input, $size, $preserve_keys = null) { }
 
@@ -715,9 +689,9 @@ function array_chunk(array $input, $size, $preserve_keys = null) { }
  * @param array $values <p>
  * Array of values to be used
  * </p>
- * @return array the combined array, false if the number of elements
+ * @return array|false the combined array, false if the number of elements
  * for each array isn't equal or if the arrays are empty.
- * @since 5.0
+ * @meta
  */
 function array_combine(array $keys, array $values) { }
 
@@ -731,30 +705,48 @@ function array_combine(array $keys, array $values) { }
  * An array with keys to check.
  * </p>
  * @return bool true on success or false on failure.
- * @since 4.0.7
- * @since 5.0
  */
 function array_key_exists($key, array $search) { }
+
+/**
+ * Gets the first key of an array
+ *
+ * Get the first key of the given array without affecting the internal array pointer.
+ *
+ * @link https://secure.php.net/array_key_first
+ * @param array $array An array
+ * @return string|int|null Returns the first key of array if the array is not empty; NULL otherwise.
+ * @since 7.3
+ */
+function array_key_first(array $array) { }
+
+/**
+ * Gets the last key of an array
+ *
+ * Get the last key of the given array without affecting the internal array pointer.
+ *
+ * @link https://secure.php.net/array_key_last
+ * @param array $array An array
+ * @return string|int|null Returns the last key of array if the array is not empty; NULL otherwise.
+ * @since 7.3
+ */
+function array_key_last(array $array) { }
 
 /**
  * &Alias; <function>current</function>
  * @link https://php.net/manual/en/function.pos.php
  * @param $arg
- * @since 4.0
- * @since 5.0
  */
 function pos(&$arg) { }
 
 /**
  * &Alias; <function>count</function>
  * @link https://php.net/manual/en/function.sizeof.php
- * @param $var
- * @param $mode [optional]
+ * @param array|Countable $var
+ * @param int $mode [optional]
  * @return int
- * @since 4.0
- * @since 5.0
  */
-function sizeof($var, $mode) { }
+function sizeof($var, $mode = COUNT_NORMAL) { }
 
 /**
  * Checks if the given key or index exists in the array. The name of this function is array_key_exists() in PHP > 4.0.6.
@@ -766,8 +758,6 @@ function sizeof($var, $mode) { }
  * An array with keys to check.
  * </p>
  * @return bool true on success or false on failure.
- * @since 4.0.7
- * @since 5.0
  */
 function key_exists($key, $search) { }
 
@@ -776,30 +766,25 @@ function key_exists($key, $search) { }
  * @link https://php.net/manual/en/function.assert.php
  * @param mixed $assertion <p>
  * The assertion.
+ * In PHP 5, this must be either a string to be evaluated or a boolean to be tested.
+ * In PHP 7, this may also be any expression that returns a value,
+ * which will be executed and the result used to indicate whether the assertion succeeded or failed.<br/>
+ * Since 7.2.0 using string is deprecated.
  * </p>
  * @param string $description [optional]
  * <p>An optional description that will be included in the failure message if the assertion fails.</p>
  * @return bool false if the assertion is false, true otherwise.
- * @since 4.0
- * @since 5.0
  */
-function assert($assertion, $description) { }
+function assert($assertion, $description = '') { }
 
 /**
- * (PHP 5 &gt;=5.5.0)<br/>
- * Returns the current process title
- * @link http://www.php.net/manual/en/function.cli-get-process-title.php
- * @return string
+ * AssertionError is thrown when an assertion made via {@see assert()} fails.
+ * @link https://php.net/manual/en/class.assertionerror.php
+ * @since 7.0
  */
-function cli_get_process_title() { }
+class AssertionError extends Error {
 
-/**
- * (PHP 5 &gt;=5.5.0)<br/>
- * Sets the process title
- * @param string $title <p>The new title</p>
- * @return bool Returns TRUE on success or FALSE on failure.
- */
-function cli_set_process_title($title) { }
+}
 
 /**
  * Set/get the various assert flags
@@ -843,7 +828,7 @@ function cli_set_process_title($title) { }
  * <tr valign="top">
  * <td>ASSERT_CALLBACK</td>
  * <td>assert.callback</td>
- * <td)<&null;)</td>
+ * <td>null</td>
  * <td>Callback to call on failed assertions</td>
  * </tr>
  * </table>
@@ -852,8 +837,6 @@ function cli_set_process_title($title) { }
  * An optional new value for the option.
  * </p>
  * @return mixed the original setting of any option or false on errors.
- * @since 4.0
- * @since 5.0
  */
 function assert_options($what, $value = null) { }
 
@@ -881,7 +864,7 @@ function assert_options($what, $value = null) { }
  * <p>
  * This parameter is case-sensitive, so values should be lowercase.
  * </p>
- * @return mixed By default, version_compare returns
+ * @return int|bool By default, version_compare returns
  * -1 if the first version is lower than the second,
  * 0 if they are equal, and
  * 1 if the second is lower.
@@ -890,8 +873,6 @@ function assert_options($what, $value = null) { }
  * When using the optional operator argument, the
  * function will return true if the relationship is the one specified
  * by the operator, false otherwise.
- * @since 4.1.0
- * @since 5.0
  */
 function version_compare($version1, $version2, $operator = null) { }
 
@@ -906,8 +887,6 @@ function version_compare($version1, $version2, $operator = null) { }
  * </p>
  * @return int On success the return value will be the created key value, otherwise
  * -1 is returned.
- * @since 4.2.0
- * @since 5.0
  */
 function ftok($pathname, $proj) { }
 
@@ -918,8 +897,6 @@ function ftok($pathname, $proj) { }
  * The input string.
  * </p>
  * @return string the ROT13 version of the given string.
- * @since 4.2.0
- * @since 5.0
  */
 function str_rot13($str) { }
 
@@ -928,12 +905,14 @@ function str_rot13($str) { }
  * @link https://php.net/manual/en/function.stream-get-filters.php
  * @return array an indexed array containing the name of all stream filters
  * available.
- * @since 5.0
  */
 function stream_get_filters() { }
 
 /**
+ * Check if a stream is a TTY
+ * @link https://php.net/manual/en/function.stream-isatty.php
  * @param resource $name
+ * @return bool
  * @since 7.2
  */
 function stream_isatty($name) {}
@@ -1051,7 +1030,6 @@ function stream_isatty($name) {}
  * <p>
  * stream_filter_register will return false if the
  * filtername is already defined.
- * @since 5.0
  */
 function stream_filter_register($filtername, $classname) { }
 
@@ -1060,7 +1038,6 @@ function stream_filter_register($filtername, $classname) { }
  * @link https://php.net/manual/en/function.stream-bucket-make-writeable.php
  * @param resource $brigade
  * @return object
- * @since 5.0
  */
 function stream_bucket_make_writeable($brigade) { }
 
@@ -1070,7 +1047,6 @@ function stream_bucket_make_writeable($brigade) { }
  * @param resource $brigade
  * @param resource $bucket
  * @return void
- * @since 5.0
  */
 function stream_bucket_prepend($brigade, $bucket) { }
 
@@ -1080,7 +1056,6 @@ function stream_bucket_prepend($brigade, $bucket) { }
  * @param resource $brigade
  * @param object $bucket
  * @return void
- * @since 5.0
  */
 function stream_bucket_append($brigade, $bucket) { }
 
@@ -1090,7 +1065,6 @@ function stream_bucket_append($brigade, $bucket) { }
  * @param resource $stream
  * @param string $buffer
  * @return object
- * @since 5.0
  */
 function stream_bucket_new($stream, $buffer) { }
 
@@ -1104,8 +1078,6 @@ function stream_bucket_new($stream, $buffer) { }
  * The variable value.
  * </p>
  * @return bool true on success or false on failure.
- * @since 4.3.0
- * @since 5.0
  */
 function output_add_rewrite_var($name, $value) { }
 
@@ -1137,8 +1109,6 @@ function output_add_rewrite_var($name, $value) { }
  *
  * @link https://php.net/manual/en/function.output-reset-rewrite-vars.php
  * @return bool true on success or false on failure.
- * @since 4.3.0
- * @since 5.0
  */
 function output_reset_rewrite_vars() { }
 
@@ -1168,5 +1138,15 @@ function realpath_cache_get() { }
  * @since 5.3.2
  */
 function realpath_cache_size() { }
+
+/**
+ * It returns the same result as (array) $object, with the
+ * exception that it ignores overloaded array casts, such as used by
+ * ArrayObject.
+ * @param $obj
+ * @return array returns the mangled object properties
+ * @since 7.4
+ */
+function get_mangled_object_vars($obj){}
 
 ?>

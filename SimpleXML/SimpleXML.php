@@ -56,7 +56,6 @@ class SimpleXMLElement implements Traversable, ArrayAccess, Countable {
    	 * returns a string on success and false on error. If the
    	 * parameter is specified, it returns true if the file was written
    	 * successfully and false otherwise.
-	 * @since 5.2.0
 	 */
 	public function saveXML ($filename = null) {}
 
@@ -68,7 +67,6 @@ class SimpleXMLElement implements Traversable, ArrayAccess, Countable {
 	 * </p>
 	 * @return SimpleXMLElement[] an array of SimpleXMLElement objects or <b>FALSE</b> in
 	 * case of an error.
-	 * @since 5.2.0
 	 */
 	public function xpath ($path) {}
 
@@ -85,7 +83,6 @@ class SimpleXMLElement implements Traversable, ArrayAccess, Countable {
 	 * <i>prefix</i> will not return any results.
 	 * </p>
 	 * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
-	 * @since 5.2.0
 	 */
 	public function registerXPathNamespace ($prefix, $ns) {}
 
@@ -212,7 +209,6 @@ class SimpleXMLElement implements Traversable, ArrayAccess, Countable {
 	 * Counts the children of an element
 	 * @link https://php.net/manual/en/simplexmlelement.count.php
 	 * @return int the number of elements of an element.
-	 * @since 5.3.0
 	 */
 	public function count () {}
 
@@ -220,7 +216,7 @@ class SimpleXMLElement implements Traversable, ArrayAccess, Countable {
      * Class provides access to children by position, and attributes by name
      * @access private Method not callable directly, stub exists for typehint only
      * @param string|int $offset
-     * @return boolean true on success or false on failure.
+     * @return bool true on success or false on failure.
      */
     private function offsetExists ($offset) {}
 
@@ -260,7 +256,6 @@ class SimpleXMLIterator extends SimpleXMLElement implements RecursiveIterator, C
 	 * Rewind to the first element
 	 * @link https://php.net/manual/en/simplexmliterator.rewind.php
 	 * @return void No value is returned.
-	 * @since 5.1.0
 	 */
 	public function rewind () {}
 
@@ -268,7 +263,6 @@ class SimpleXMLIterator extends SimpleXMLElement implements RecursiveIterator, C
 	 * Check whether the current element is valid
 	 * @link https://php.net/manual/en/simplexmliterator.valid.php
 	 * @return bool <b>TRUE</b> if the current element is valid, otherwise <b>FALSE</b>
-	 * @since 5.1.0
 	 */
 	public function valid () {}
 
@@ -276,7 +270,6 @@ class SimpleXMLIterator extends SimpleXMLElement implements RecursiveIterator, C
 	 * Returns the current element
 	 * @link https://php.net/manual/en/simplexmliterator.current.php
 	 * @return mixed the current element as a <b>SimpleXMLIterator</b> object or <b>NULL</b> on failure.
-	 * @since 5.1.0
 	 */
 	public function current () {}
 
@@ -284,7 +277,6 @@ class SimpleXMLIterator extends SimpleXMLElement implements RecursiveIterator, C
 	 * Return current key
 	 * @link https://php.net/manual/en/simplexmliterator.key.php
 	 * @return mixed the XML tag name of the element referenced by the current <b>SimpleXMLIterator</b> object or <b>FALSE</b>
-	 * @since 5.1.0
 	 */
 	public function key () {}
 
@@ -292,7 +284,6 @@ class SimpleXMLIterator extends SimpleXMLElement implements RecursiveIterator, C
 	 * Move to next element
 	 * @link https://php.net/manual/en/simplexmliterator.next.php
 	 * @return void No value is returned.
-	 * @since 5.1.0
 	 */
 	public function next () {}
 
@@ -300,7 +291,6 @@ class SimpleXMLIterator extends SimpleXMLElement implements RecursiveIterator, C
 	 * Checks whether the current element has sub elements.
 	 * @link https://php.net/manual/en/simplexmliterator.haschildren.php
 	 * @return bool <b>TRUE</b> if the current element has sub-elements, otherwise <b>FALSE</b>
-	 * @since 5.1.0
 	 */
 	public function hasChildren () {}
 
@@ -309,7 +299,6 @@ class SimpleXMLIterator extends SimpleXMLElement implements RecursiveIterator, C
 	 * @link https://php.net/manual/en/simplexmliterator.getchildren.php
 	 * @return SimpleXMLIterator a <b>SimpleXMLIterator</b> object containing
 	 * the sub-elements of the current element.
-	 * @since 5.1.0
 	 */
 	public function getChildren () {}
 
@@ -325,7 +314,6 @@ class SimpleXMLIterator extends SimpleXMLElement implements RecursiveIterator, C
 	 * Counts the children of an element
 	 * @link https://php.net/manual/en/simplexmlelement.count.php
 	 * @return int the number of elements of an element.
-	 * @since 5.3.0
 	 */
 	public function count () {}
 
@@ -341,7 +329,7 @@ class SimpleXMLIterator extends SimpleXMLElement implements RecursiveIterator, C
  * Libxml 2 unescapes the URI, so if you want to pass e.g.
  * b&#38;#38;c as the URI parameter a,
  * you have to call
- * simplexml_load_file(rawurlencode('http://example.com/?a=' .
+ * simplexml_load_file(rawurlencode('https://example.com/?a=' .
  * urlencode('b&#38;#38;c'))). Since PHP 5.1.0 you don't need to do
  * this because PHP will do it for you.
  * </p>
@@ -364,7 +352,6 @@ class SimpleXMLIterator extends SimpleXMLElement implements RecursiveIterator, C
  * </p>
  * @return SimpleXMLElement an object of class SimpleXMLElement with
  * properties containing the data held within the XML document, or <b>FALSE</b> on failure.
- * @since 5.0
  */
 function simplexml_load_file ($filename, $class_name = "SimpleXMLElement", $options = 0, $ns = "", $is_prefix = false) {}
 
@@ -393,7 +380,6 @@ function simplexml_load_file ($filename, $class_name = "SimpleXMLElement", $opti
  * </p>
  * @return SimpleXMLElement an object of class SimpleXMLElement with
  * properties containing the data held within the xml document, or <b>FALSE</b> on failure.
- * @since 5.0
  */
 function simplexml_load_string ($data, $class_name = "SimpleXMLElement", $options = 0, $ns = "", $is_prefix = false) {}
 
@@ -410,7 +396,6 @@ function simplexml_load_string ($data, $class_name = "SimpleXMLElement", $option
  * SimpleXMLElement class.
  * </p>
  * @return SimpleXMLElement a SimpleXMLElement or <b>FALSE</b> on failure.
- * @since 5.0
  */
 function simplexml_import_dom (DOMNode $node, $class_name = "SimpleXMLElement") {}
 
